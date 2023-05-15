@@ -23,16 +23,16 @@ namespace BibTeXLibrary
 		#region Fields
 
 		/// <summary>Bibliography entry type, e.g. "book", "thesis", "string".</summary>
-		protected string                            _type;
+		protected string                            _type						= "";
 
 		/// <summary>Cite key.</summary>
-		protected string                            _key;
+		protected string                            _key						= "";
 
 		/// <summary>Store all tags.</summary>
 		protected readonly OrderedDictionary        _tags						= new OrderedDictionary();
 
 		/// <summary>Specifies if the tags are case sensitive.</summary>
-		private bool                                _caseSensitivetags;
+		private bool                                _caseSensitivetags			= false;
 
 		#endregion
 
