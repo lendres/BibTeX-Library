@@ -150,7 +150,7 @@ namespace BibTeXLibrary
 		/// <param name="path">Full path and file name to the file to reader.</param>'
 		/// <param name="bibEntryInitializationFile">Path of the BibEntry initialization information.</param>
 		public BibParser(string path, string bibEntryInitializationFile) :
-			this(new StreamReader(path, Encoding.Default), bibEntryInitializationFile)
+			this(new StreamReader(path, Encoding.UTF8), bibEntryInitializationFile)
 		{
 		}
 
