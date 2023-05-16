@@ -318,21 +318,15 @@ namespace BibTeXLibrary
 							tagValueBuilder.Append(token.Value);
                             break;
 
-                        case BibBuilderState.SetTag:
-                            Debug.Assert(bibPart != null, "bib != null");
-							bibPart.SetTagValue(tagName, new TagValue(tagValueBuilder.ToString(), tagValueIsString));
-                            tagValueBuilder.Clear();
-                            tagName = string.Empty;
-                            break;
+						case BibBuilderState.SetTag:
+							SetTag(bibPart, ref tagName, tagValueIsString, tagValueBuilder);
+							break;
 
-                        case BibBuilderState.Build:
+						case BibBuilderState.Build:
                             if (tagName != string.Empty)
                             {
-                                Debug.Assert(bibPart != null, "bib != null");
-                                bibPart[tagName] = tagValueBuilder.ToString();
-                                tagValueBuilder.Clear();
-                                tagName = string.Empty;
-                            }
+								SetTag(bibPart, ref tagName, tagValueIsString, tagValueBuilder);
+							}
 							bibliographyDOM.AddBibPart(bibPart);
                             break;
                     }
@@ -352,11 +346,26 @@ namespace BibTeXLibrary
 			return bibliographyDOM;
         }
 
-        /// <summary>
-        /// Tokenizer for BibTeX entry.
-        /// </summary>
-        /// <returns></returns>
-        private IEnumerable<Token> Tokenize()
+		/// <summary>
+		/// Sets the tag and resets all the variables used to build the tag.
+		/// </summary>
+		/// <param name="bibPart">BibliographyPart.</param>
+		/// <param name="tagName">The name of the tag.</param>
+		/// <param name="tagValueIsString">A boolean to indicate if the value of the tag is a name (string constant) or an ordinary string.</param>
+		/// <param name="tagValueBuilder">String builder used to build the tag value.</param>
+		private static void SetTag(BibliographyPart bibPart, ref string tagName, bool tagValueIsString, StringBuilder tagValueBuilder)
+		{
+			Debug.Assert(bibPart != null, "bib != null");
+			bibPart.SetTagValue(tagName, new TagValue(tagValueBuilder.ToString(), tagValueIsString));
+			tagValueBuilder.Clear();
+			tagName = string.Empty;
+		}
+
+		/// <summary>
+		/// Tokenizer for BibTeX entry.
+		/// </summary>
+		/// <returns></returns>
+		private IEnumerable<Token> Tokenize()
         {
             int     code;
             char    c;
