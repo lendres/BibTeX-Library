@@ -140,7 +140,7 @@ namespace BibTeXLibrary
 		/// </summary>
 		/// <param name="path">Full path and file name to the file to reader.</param>
 		public BibParser(string path) :
-            this(new StreamReader(path, Encoding.Default))
+            this(new StreamReader(path, Encoding.UTF8))
 		{
 		}
 
@@ -197,7 +197,14 @@ namespace BibTeXLibrary
 		{
 			using (BibParser parser = new BibParser(path))
 			{
-				return parser.Parse();
+				try
+				{
+					return parser.Parse();
+				}
+				catch (UnexpectedTokenException exception)
+				{
+					throw new Exception($"An error occured reading the file:\n" + path + "\n\n" + exception.Message);
+				}
 			}
 		}
 

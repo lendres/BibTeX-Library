@@ -1,4 +1,5 @@
-﻿using DigitalProduction.Strings;
+﻿using DigitalProduction.IO;
+using DigitalProduction.Strings;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,8 +64,20 @@ namespace BibTeXLibrary
 		/// <param name="bibFilePath">Full path to the bibliography file.</param>
 		public void Read(string bibFilePath)
 		{
-			BibParser parser = new BibParser(bibFilePath);
-			_bibliographyDOM = parser.Parse();
+			_bibliographyDOM.Clear();
+			try
+			{
+				BibParser parser = new BibParser(bibFilePath);
+				parser.Parse(_bibliographyDOM);
+			}
+			catch (UnexpectedTokenException exception)
+			{
+				throw new Exception($"A parsing error occured reading the bibliography file:\n" + bibFilePath + "\n\n" + exception.Message);
+			}
+			catch (Exception exception)
+			{
+				throw new Exception($"An error occured reading the bibliography file:\n" + bibFilePath + "\n\n" + exception.Message);
+			}
 		}
 
 		/// <summary>
@@ -75,8 +88,19 @@ namespace BibTeXLibrary
 		public void Read(string bibFilePath, string bibEntryInitializationFile)
 		{
 			_bibliographyDOM.Clear();
-			BibParser parser = new BibParser(bibFilePath, bibEntryInitializationFile);
-			parser.Parse(_bibliographyDOM);
+			try
+			{
+				BibParser parser = new BibParser(bibFilePath, bibEntryInitializationFile);
+				parser.Parse(_bibliographyDOM);
+			}
+			catch (UnexpectedTokenException exception)
+			{
+				throw new Exception($"An parsing error occured reading the bibliography file:\n" + bibFilePath + "\n\n" + exception.Message);
+			}
+			catch (Exception exception)
+			{
+				throw new Exception($"An error occured reading the bibliography file:\n" + bibFilePath + "\nUsing the initialization file:\n" + bibEntryInitializationFile + "\n\n" + exception.Message);
+			}
 		}
 
 		/// <summary>
