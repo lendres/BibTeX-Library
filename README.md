@@ -1,8 +1,12 @@
 # BibTeXLibrary
 
-A utility library for BibTeX written in C#.
+A utility library for BibTeX files written in C#.
 
-This library is based on the BERef/BibTeXLibrary.  It contains contributions from AizazZaidee.  The library has been heavily modified and added to so it can be used in an application for maintaining a BibTeX file.
+## Ancestry
+
+This library is based on the _BibTeXLibrary_ by _BERef_.  It contains contributions from _AizazZaidee_.
+
+The library has been heavily modified and has had many additions so it can be used in an application for maintaining a BibTeX file.
 
 ## Usage at a glance
 
