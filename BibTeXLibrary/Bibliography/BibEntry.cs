@@ -14,7 +14,7 @@ namespace BibTeXLibrary
 	/// </summary>
 	public class BibEntry : BibliographyPart
 	{
-		#region Static Fields
+		#region Fields
 
 		public static string[]                  _nameSuffixes                   = { "jr", "jr.", "sr", "sr.", "ii", "iii", "iv", "v", @"p\`{e}re", "fils" };
 
@@ -46,10 +46,6 @@ namespace BibTeXLibrary
 
 			return bibEntry;
 		}
-
-		#endregion
-
-		#region Private Fields
 
 		#endregion
 
@@ -276,7 +272,7 @@ namespace BibTeXLibrary
 		/// <param name="propertyName">Name of the property/calling method.</param>
 		private string GetFormattedName([CallerMemberName] string propertyName = null)
 		{
-			return propertyName.First().ToString().ToLower() + propertyName.Substring(1);
+			return propertyName.ToLower();
 		}
 
 		#endregion
@@ -393,8 +389,10 @@ namespace BibTeXLibrary
 		/// <exception cref="NotSupportedException">The name format specified was not valid.</exception>
 		public string GetFirstAuthorsName(NameFormat format, StringCase toCase)
 		{
-			// Get the authors and split on the "and" string.  If there are no authors, return a blank string.
-			string[] authors = this.Author.Split(new string[] { "and" }, StringSplitOptions.RemoveEmptyEntries);
+			// Get the authors.  The first step is to remove any internal braces ({}).  Then split on the "and" string.
+			// If there are no authors, return a blank string.
+			string authorTag = this.Author.TrimStart('{').TrimEnd('}');
+			string[] authors = authorTag.Split(new string[] { "and" }, StringSplitOptions.RemoveEmptyEntries);
 			if (authors.Length == 0)
 			{
 				return "";
