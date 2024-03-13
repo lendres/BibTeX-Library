@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibTeXLibrary", "BibTeXLibr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{53115C09-7A3C-48CD-98AF-06668FC3E6EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digital Production", "..\C-Sharp-Library\Library\Digital Production.csproj", "{078EA7C0-7EE8-4D51-9421-8EEDC779ACBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digital Production", "..\C Sharp Library\Library\Digital Production.csproj", "{078EA7C0-7EE8-4D51-9421-8EEDC779ACBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

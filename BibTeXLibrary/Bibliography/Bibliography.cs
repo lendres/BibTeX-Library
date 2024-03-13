@@ -1,10 +1,7 @@
-﻿using DigitalProduction.IO;
-using DigitalProduction.Strings;
+﻿using DigitalProduction.Strings;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 
@@ -31,7 +28,6 @@ namespace BibTeXLibrary
 		}
 
 		#endregion
-
 		
 		#region Properties
 
