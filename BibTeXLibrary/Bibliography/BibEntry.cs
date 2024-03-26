@@ -379,7 +379,7 @@ namespace BibTeXLibrary
 
 		#endregion
 
-		#region Public Tab Values
+		#region Public Tag Values
 
 		/// <summary>
 		/// Gets the first author's name.
