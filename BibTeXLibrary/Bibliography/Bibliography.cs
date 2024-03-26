@@ -197,8 +197,19 @@ namespace BibTeXLibrary
 			string prefix = "ref:";
 			StringBuilder key = new StringBuilder(prefix);
 
-			// This is setup to allow no conversion, lower case, upper case, et cetera in the future, but for now just assume lower case.
-			key.Append(entry.GetFirstAuthorsName(NameFormat.Last, StringCase.LowerCase));
+			// This is setup to allow different key formats such as first and last name of author, et cetera.  For now last name and lower case.
+			// The names may have special characters and those need to be removed.  We do this by only allowing certain letters.
+			string name           = entry.GetFirstAuthorsName(NameFormat.Last, StringCase.LowerCase);
+			StringBuilder keyName = new StringBuilder();
+			foreach (char c in name.ToCharArray())
+			{
+				if (c >= 'a' & c <= 'z' | c >= '0' & c <= '9')
+				{
+					keyName.Append(c);
+				}
+			}
+
+			key.Append(keyName.ToString());
 			key.Append(entry.Year);
 			return key.ToString();
 		}
