@@ -345,7 +345,7 @@ namespace BibTeXLibrary
 				//    ParserState.Begin    : We are still at the begining because we found no entries.
                 if (curState != ParserState.OutEntry & curState != ParserState.Begin)
                 {
-                    var expected = from pair in StateMap[curState] select pair.Key;
+					IEnumerable<BibTeXLibrary.TokenType> expected = from pair in StateMap[curState] select pair.Key;
                     throw new UnexpectedTokenException(_lineCount, _columnCount, TokenType.EOF, expected.ToArray());
                 }
             }
@@ -394,7 +394,7 @@ namespace BibTeXLibrary
                 }
                 else if (IsStringCharacter(c))
                 {
-                    var value = new StringBuilder();
+                    StringBuilder value = new StringBuilder();
 
                     while (true)
                     {
@@ -461,7 +461,7 @@ namespace BibTeXLibrary
                     }
                     else
                     {
-                        var value = new StringBuilder();
+                        StringBuilder value = new StringBuilder();
 						// Read the brace (was only peeked).
                         Read();
 						int internalBraceCount = 1;

@@ -20,11 +20,11 @@ namespace BibTeXLibrary
         public UnexpectedTokenException(int lineNumber, int colNumber, TokenType unexpected, params TokenType[] expected)
             : base(lineNumber, colNumber)
         {
-            var errorMsg = new StringBuilder($"An unexpected token was found.\nToken: '{unexpected}'.\nAt line {lineNumber}, column {colNumber}.");
+			StringBuilder errorMsg = new StringBuilder($"An unexpected token was found.\nToken: '{unexpected}'.\nAt line {lineNumber}, column {colNumber}.");
 
 			// Add a list of acceptable tokens.
             errorMsg.Append("\nExpected: ");
-            foreach (var item in expected)
+            foreach (TokenType item in expected)
             {
                 errorMsg.Append($"{item}, ");
             }
