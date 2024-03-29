@@ -339,7 +339,11 @@ namespace BibTeXLibrary
                     }
                     curState = nextState;
                 }
-                if (curState != ParserState.OutEntry)
+
+				// Check the current state.  Valid options are:
+				//    ParserState.OutEntry : We have completed an entire entry.
+				//    ParserState.Begin    : We are still at the begining because we found no entries.
+                if (curState != ParserState.OutEntry & curState != ParserState.Begin)
                 {
                     var expected = from pair in StateMap[curState] select pair.Key;
                     throw new UnexpectedTokenException(_lineCount, _columnCount, TokenType.EOF, expected.ToArray());
