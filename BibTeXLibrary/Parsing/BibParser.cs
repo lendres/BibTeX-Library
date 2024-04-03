@@ -340,10 +340,11 @@ namespace BibTeXLibrary
                     curState = nextState;
                 }
 
-				// Check the current state.  Valid options are:
+				// Check the current state.  Valid exit options are:
 				//    ParserState.OutEntry : We have completed an entire entry.
-				//    ParserState.Begin    : We are still at the begining because we found no entries.
-                if (curState != ParserState.OutEntry & curState != ParserState.Begin)
+				//    ParserState.Begin    : There are no entries and no header information.
+				//    ParserState.InHeader : We read header information, but did not find any entries in the file.
+				if (curState != ParserState.OutEntry & curState != ParserState.Begin & curState != ParserState.InHeader)
                 {
 					IEnumerable<BibTeXLibrary.TokenType> expected = from pair in StateMap[curState] select pair.Key;
                     throw new UnexpectedTokenException(_lineCount, _columnCount, TokenType.EOF, expected.ToArray());
