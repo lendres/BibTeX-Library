@@ -35,13 +35,7 @@ namespace BibTeXLibrary
 		/// BibTeX entries.
 		/// </summary>
 		[XmlIgnore()]
-		public BindingList<BibEntry> Entries
-		{
-			get
-			{
-				return _bibliographyDOM.BibliographyEntries;
-			}
-		}
+		public BindingList<BibEntry> Entries { get => _bibliographyDOM.BibliographyEntries;}
 
 		/// <summary>
 		/// The bibliography document object model.
