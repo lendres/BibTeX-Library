@@ -2,7 +2,7 @@
 A utility library for BibTeX files written in C#.
 
 ## Ancestry
-This library is based on the [BibTeXLibrary](https://github.com/BERef/BibTeXLibrary).  The library has been heavily modified and has had many additions so it can be used in an application for maintaining a BibTeX file.  As a result, it is no longer compatible with the original library.
+This library is based on the [BibTeXLibrary](https://github.com/BERef/BibTeXLibrary).  The library has been heavily modified and has had many additions so it can be used in an application for maintaining a BibTeX file.  It provides additional features as well as issue corrections.  As a result, it is no longer compatible with the original library.
 
 ## Usage at a glance
 - string -> BibEntry
