@@ -2,7 +2,7 @@
 A utility library for BibTeX files written in C#.
 
 ## Ancestry
-This library is based on the [BibTeXLibrary](https://github.com/BERef/BibTeXLibrary).  The library has been heavily modified and has had many additions so it can be used in an application for maintaining a BibTeX file.  It provides additional features as well as issue corrections.  As a result, it is no longer compatible with the original library.
+This library is based on the [BibTeXLibrary](https://github.com/BERef/BibTeXLibrary).  The library has been heavily modified to correct issues and add additions.  The objective of these modifications is to prepare the library for use in an application for maintaining a BibTeX file (see [BibTeX Manager](https://github.com/lendres/BibTex-Manager-Maui)).  As a result, it is no longer compatible with the original library.
 
 ## Usage at a glance
 - string -> BibEntry
@@ -42,6 +42,7 @@ foreach(var entry in entries) { ... }
 ## License
 The MIT License (MIT)
 Copyright (c) 2016 BERef
+Copyright (c) Lance A. Endres
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
