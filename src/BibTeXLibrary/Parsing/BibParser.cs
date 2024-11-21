@@ -295,14 +295,18 @@ namespace BibTeXLibrary
                         case BibBuilderState.SetType:
 							if (token.Value == "string")
 							{
-								bibPart = new StringConstantPart();
-								bibPart.Type = token.Value;
+								bibPart = new StringConstantPart
+								{
+									Type = token.Value
+								};
 							}
 							else
 							{
 								// Must add the value before doing the initialization.
-								BibEntry bibEntry = new BibEntry();
-								bibEntry.Type = token.Value;
+								BibEntry bibEntry = new BibEntry
+								{
+									Type = token.Value
+								};
 								bibEntry.Initialize(_bibEntryInitialization.GetDefaultTags(bibEntry));
 								bibPart = bibEntry;
 							}

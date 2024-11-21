@@ -206,11 +206,6 @@ namespace BibTeXLibrary
 			return min;
 		}
 
-		private string GetComparisonName(BibEntry entry)
-		{
-			return entry.GetFirstAuthorsName(NameFormat.Last, StringCase.LowerCase);
-		}
-
 		#endregion
 
 	} // End class.

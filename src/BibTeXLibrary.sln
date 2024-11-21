@@ -5,9 +5,9 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibTeXLibrary", "BibTeXLibrary\BibTeXLibrary.csproj", "{E453FF0B-97B0-4575-9A2E-B15DCBF7C47F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{53115C09-7A3C-48CD-98AF-06668FC3E6EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit Tests", "Unit Tests\Unit Tests.csproj", "{53115C09-7A3C-48CD-98AF-06668FC3E6EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digital Production", "..\C Sharp Library\Library\Digital Production.csproj", "{078EA7C0-7EE8-4D51-9421-8EEDC779ACBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digital Production", "..\..\C Sharp Library\Library\Digital Production.csproj", "{078EA7C0-7EE8-4D51-9421-8EEDC779ACBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
