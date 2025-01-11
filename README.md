@@ -1,4 +1,4 @@
-# BibTeXLibrary
+# BibTeX-Library
 A utility library for BibTeX files written in C#.
 
 ## Ancestry
