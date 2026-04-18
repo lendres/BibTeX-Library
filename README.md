@@ -3,7 +3,7 @@ A utility library for BibTeX files written in C#.
 
 ## Ancestry
 ### BibTeX-Library
-This library is based on the [BibTeXLibrary](https://github.com/BERef/BibTeXLibrary).  The library has been heavily modified to correct issues and add additions.  As a result, it is no longer compatible with the original library.  The objective of these modifications is to prepare the library for use in an application for maintaining a BibTeX file (see [BibTeX Manager]((https://github.com/lendres/BibTeX-Manager)).
+This library is based on the [BibTeXLibrary](https://github.com/BERef/BibTeXLibrary).  The library has been heavily modified to correct issues and add additions.  As a result, it is no longer compatible with the original library.  The objective of these modifications is to prepare the library for use in an application for maintaining a BibTeX file (see [BibTeX Manager](https://github.com/lendres/BibTeX-Manager)).
 
 This library is no longer actively maintained and updated.  It has been updated for use with .Net Maui, see below.
 
