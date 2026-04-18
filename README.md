@@ -1,3 +1,15 @@
+# ⚠️ Project Archived
+
+This repository is no longer maintained and has been archived.
+
+- No new features will be added  
+- No bug fixes will be provided  
+- Issues and pull requests may not be reviewed  
+
+👉 This project has been superseded by:  [BibTeX Library Dot Net](https://github.com/lendres/BibTeX-Library-Dot-Net)
+
+
+
 # BibTeX-Library
 A utility library for BibTeX files written in C#.
 
